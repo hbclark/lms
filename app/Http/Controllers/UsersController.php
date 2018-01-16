@@ -97,7 +97,7 @@ class UsersController extends Controller
         ]);
 
         $email = $request->input('email');
-        $password = bcrypt($request->input('password'));
+        $password = $request->input('password');
 
         $user = new User();
         $user = $user
@@ -108,24 +108,22 @@ class UsersController extends Controller
         if (Auth::attempt(['email' => $email, 'password' => $password])) {
             session()->flash('success', 'Welcome');
             return redirect()->route('home', [Auth::user()]);
-        } else {
-            if (empty($user)) {
+        }elseif(empty($user)) {
                 session()->flash('danger', 'Email address is not existed');
                 return redirect()->back();
-            } else {
-                if ($password != $user->password) {
+        }elseif($password != $user->password) {
                     session()->flash('danger', 'Incorrect Password, Please try again');
                     return redirect()->back();
-
-                } else {
-                    session()->flash('danger', 'Service is not available, Please try again');
-                    return redirect()->back();
-                }
-            }
-
-
+        }else {
+            session()->flash('danger', 'Service is not available, Please try again');
+            return redirect()->back();
         }
     }
+
+
+
+
+
 
     public function logout()
     {
