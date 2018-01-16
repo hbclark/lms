@@ -8403,6 +8403,12 @@ main {
   border-radius: 50%;
 }
 
+.captcha {
+  margin-bottom: 0;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
 /*  footer */
 
 .footer {

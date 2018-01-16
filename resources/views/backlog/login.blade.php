@@ -28,6 +28,11 @@
                         <label for="password">Password:</label>
                         <input type="password" name='password' class="form-control" value={{old('password')}}>
                     </div>
+                    <div class="form-group">
+                        <label for="captcha">Cpatcha code:      </label>
+                        <input type="text" id="captcha" class="form-control" name="captcha">
+                        <img class="thumbnail captcha" src="{{captcha_src('flat')}}" onclick="this.src='/captcha/flat?'+Math.random()" title="Click the image to refresh the code">
+                    </div>
                     <button tyep="submit" class="btn btn-success">Login</button>
                 </form>
             </div>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 
 class UsersController extends Controller
 {
@@ -91,13 +92,19 @@ class UsersController extends Controller
 
     public function login(Request $request)
     {
-        $this->validate($request, [
-            'email' => 'required|email',
-            'password' => 'required'
-        ]);
-
         $email = $request->input('email');
         $password = $request->input('password');
+        
+        $this->validate($request, [
+            'email' => 'required|email',
+            'password' => 'required',
+            'captcha'=>'required|captcha',
+        ],[
+            'captcha.required' => 'please enter captcha code',
+            'captcha.captcha' => 'captcha code is not correct'
+        ]);
+
+
 
         $user = new User();
         $user = $user
