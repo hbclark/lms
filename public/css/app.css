@@ -8350,52 +8350,83 @@ button.close {
   }
 }
 
+html {
+  position: relative;
+  min-height: 100%;
+}
+
 body {
-  padding-top: 80px;
+  margin: 50px 0 60px 0;
+  min-height: 100%;
+}
+
+.jumbotron {
+  padding-top: 40px;
+  margin-top: 60px;
+}
+
+.flash-message {
+  margin-top: 10px;
+  padding-top: 5px;
 }
 
 section {
   overflow: auto;
 }
 
+/*  main  */
+
+main {
+  overflow: hidden;
+}
+
+/* sidebar */
+
+.sidebar {
+  position: fixed;
+  top: 50px;
+  left: 0;
+  z-index: 1000;
+  padding: 20px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  border-right: 1px solid #eee;
+  background-color: #2e3436;
+  min-height: 84.8%;
+  max-height: 100%;
+}
+
+.gravatar {
+  float: left;
+  margin-right: 10px;
+  max-width: 50px;
+  border-radius: 50%;
+}
+
 /*  footer */
 
-footer {
-  margin-top: 45px;
-  padding-top: 5px;
+.footer {
+  padding: 20px 0;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
   border-top: 1px solid #eaeaea;
+  background-color: #000;
   color: #777;
+  height: 60px;
 }
 
-footer a {
-  color: #555;
+.footer .container {
+  padding-right: 15px;
+  padding-left: 15px;
 }
 
-footer a:hover {
-  color: #222;
-}
-
-footer small {
-  float: left;
-}
-
-footer ul {
-  float: right;
-  list-style: none;
-}
-
-footer ul li {
-  float: left;
+.footer .container p {
+  margin-right: 15px;
   margin-left: 15px;
 }
 
-footer img.brnad-icon {
-  width: 17px;
-  height: 17px;
-}
-
-footer .slogon {
-  font-size: 13px;
-  font-weight: bold;
+.footer .container p a {
+  color: inherit;
 }
 

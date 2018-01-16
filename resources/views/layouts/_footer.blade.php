@@ -1,15 +1,14 @@
-<div class="col-md-12">
+
     <footer class="footer">
-        <small class="slogon">
-            <img class="brnad-icon" src="https://333" alt="icon">
+        <div class="container">
+            <p class="pull-left">
+            Designed and built by
             <a href="https://hbclark.github.io">
-                Produced by Clark He
+                Clark He
             </a>
-        </small>
-        <nav>
-            <ul>
-                <li><a href="{{route('about')}}">About</a></li>
-            </ul>
-        </nav>
+            </p>
+
+            <p class="pull-right"><a href="mailto:arcaneade@gmail.com">Contact us</a></p>
+        </div>
+
     </footer>
-</div>
