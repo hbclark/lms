@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Student;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -9,6 +10,10 @@ use Illuminate\Support\Facades\Validator;
 
 class UsersController extends Controller
 {
+
+    public function __construct(){
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -16,7 +21,8 @@ class UsersController extends Controller
      */
     public function index()
     {
-        //
+        $students= Student::all()->orderBy('desc','created_at')->paginate(20);
+        return view('students.index',compact('students'));
     }
 
     /**
@@ -94,7 +100,7 @@ class UsersController extends Controller
     {
         $email = $request->input('email');
         $password = $request->input('password');
-        
+
         $this->validate($request, [
             'email' => 'required|email',
             'password' => 'required',
@@ -112,7 +118,7 @@ class UsersController extends Controller
             ->get()->first();
 
 
-        if (Auth::attempt(['email' => $email, 'password' => $password])) {
+        if (Auth::attempt(['email' => $email, 'password' => $password],$request->has('remember'))) {
             session()->flash('success', 'Welcome');
             return redirect()->route('home', [Auth::user()]);
         }elseif(empty($user)) {

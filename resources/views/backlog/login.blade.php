@@ -33,6 +33,9 @@
                         <input type="text" id="captcha" class="form-control" name="captcha">
                         <img class="thumbnail captcha" src="{{captcha_src('flat')}}" onclick="this.src='/captcha/flat?'+Math.random()" title="Click the image to refresh the code">
                     </div>
+                    <div>
+                        <label><input type="checkbox" name="remember">Remember me</label>
+                    </div>
                     <button tyep="submit" class="btn btn-success">Login</button>
                 </form>
             </div>
