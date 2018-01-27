@@ -10,7 +10,7 @@
                         <h4 style="color: #2e8d5c;">{!! count(App\Student::all()) !!}</h4>
                         <h4>STUDENTS</h4>
                     </div>
-                    <div class="col-md-9">
+                    <div class="col-md-9" style="padding-top:15px">
                         <button class="btn btn-primary" style="border-radius: 24px;float:right;background-color:#2e8d5c">Add Student</button>
                     </div>
                 </div>
