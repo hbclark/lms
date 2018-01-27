@@ -12,6 +12,7 @@ html{
 body {
   margin: 50px 0 59px 0;
   min-height:100%;
+  background-color:#eff3f6;
 }
 
 .jumbotron {
@@ -34,6 +35,13 @@ main{
 }
 /* sidebar */
 
+.toptitle{
+  text-align: center;
+  text-align:-moz-center;
+  text-align: -webkit-center;
+  margin:0 auto;
+
+}
 .sidebar {
   position: fixed;
   top: 50px;
@@ -69,8 +77,8 @@ main{
   padding:20px 0;
   position:absolute;
   bottom:0;
-  width:100%;
   border-top: 1px solid #eaeaea;
+  width:100%;
   background-color: #000;
   color: #777;
   height:60px;
@@ -90,4 +98,13 @@ main{
    }
    }
 
+}
+
+.pagination {
+  display: block;
+  clear:left;
+  float:right;
+  padding-left: 0;
+  margin: 20px 0;
+  border-radius: 4px;
 }

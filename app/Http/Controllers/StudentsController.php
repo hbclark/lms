@@ -13,8 +13,10 @@ class StudentsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
+
     {
-        //
+        $students=Student::orderBy('created_at','desc')->paginate(5);
+        return view('students.index',compact('students'));
     }
 
     /**
@@ -46,7 +48,7 @@ class StudentsController extends Controller
      */
     public function show(Student $student)
     {
-        //
+        return view('student.show',compact('student'));
     }
 
     /**

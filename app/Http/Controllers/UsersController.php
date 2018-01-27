@@ -21,8 +21,7 @@ class UsersController extends Controller
      */
     public function index()
     {
-        $students= Student::all()->orderBy('desc','created_at')->paginate(20);
-        return view('students.index',compact('students'));
+        //
     }
 
     /**

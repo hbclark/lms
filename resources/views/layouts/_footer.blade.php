@@ -1,6 +1,6 @@
 
     <footer class="footer">
-        <div class="container">
+        <div class="container-fluid">
             <p class="pull-left">
             Designed and built by
             <a href="https://hbclark.github.io">

@@ -31,7 +31,7 @@
                     </a>
                 </li>
                 <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-graduation-cap"></i>Lectures</a>
-                <li class="nav-item"><a class="nav-link" href="#"><i class="far fa-user"></i>Students</a>
+                <li class="nav-item"><a class="nav-link" href={{route('students.index')}}><i class="far fa-user"></i>Students</a>
                 <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-sign-out-alt"></i>Logout</a>
             </ul>
         </div>
@@ -43,9 +43,10 @@
             @yield('content')
 
         </div>
+        @include('layouts._footer')
 
     </main>
-    @include('layouts._footer')
+
 <script src="/js/app.js"></script>
 </body>
 </html>

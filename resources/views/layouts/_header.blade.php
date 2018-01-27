@@ -5,10 +5,7 @@
                 <div class="navbar-header">
                     <a class="navbar-brand" href="#">LMS</a>
                 </div>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="{{route('help')}}" >Help</a></li>
-                    <li><a href="{{route('logout')}}" class="active">Logout</a></li>
-                </ul>
+                <h4 class="toptitle">@yield('toptitle','LMS')</h4>
             @else
             <div class="navbar-header">
                 <a class="navbar-brand" href="#">LMS</a>
