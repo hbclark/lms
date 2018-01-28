@@ -16,7 +16,7 @@
                                 <li>{{ $error }}</li>
                             @endforeach
                         </ul>
-                    </div>,
+                    </div>
                 @endif
                 <form method="post" action="{{route('login')}}">
                     {{csrf_field()}}

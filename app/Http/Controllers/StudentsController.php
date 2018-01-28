@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Handlers\ImageUploadHandler;
+use App\Http\Requests\StudentRequest;
 use App\Student;
 use Illuminate\Http\Request;
 
@@ -15,7 +17,7 @@ class StudentsController extends Controller
     public function index()
 
     {
-        $students=Student::orderBy('created_at','desc')->paginate(5);
+        $students=Student::orderBy('created_at','asc')->paginate(5);
         return view('students.index',compact('students'));
     }
 
@@ -26,18 +28,31 @@ class StudentsController extends Controller
      */
     public function create()
     {
-        //
+        return view('students.create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\StudentRequest $request
+     * @param ImageUploadHandler $uploader
+     * @param \App\Student $student
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StudentRequest $request,ImageUploadHandler $uploader, Student $student)
     {
-        //
+
+        $data=$request->all();
+        if ($request->avatar) {
+            $result = $uploader->save($request->avatar, 'avatars', $student->id, 362);
+            if ($result) {
+                $data['avatar'] = $result['path'];
+            }
+        }
+        Student::create($data);
+        session()->flash('success','student has beed added!');
+
+        return redirect()->route('students.index');
     }
 
     /**
@@ -48,7 +63,7 @@ class StudentsController extends Controller
      */
     public function show(Student $student)
     {
-        return view('student.show',compact('student'));
+        return view('students.show',compact('student'));
     }
 
     /**
@@ -59,7 +74,7 @@ class StudentsController extends Controller
      */
     public function edit(Student $student)
     {
-        //
+        return view('students.edit',compact('student'));
     }
 
     /**

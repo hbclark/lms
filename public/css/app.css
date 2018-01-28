@@ -8350,6 +8350,11 @@ button.close {
   }
 }
 
+* {
+  margin: 0;
+  padding: 0;
+}
+
 html {
   position: relative;
   min-height: 100%;
@@ -8383,24 +8388,16 @@ main {
 
 /* sidebar */
 
-.toptitle {
-  text-align: center;
-  text-align: -moz-center;
-  text-align: -webkit-center;
-  margin: 0 auto;
-}
-
 .sidebar {
   position: fixed;
   top: 50px;
+  bottom: 0;
   left: 0;
   z-index: 1000;
   overflow-x: hidden;
   overflow-y: auto;
   border-right: 1px solid #eee;
   background-color: #2e3436;
-  min-height: 93%;
-  max-height: 100%;
   padding-top: 20px;
 }
 
@@ -8429,7 +8426,7 @@ main {
   color: #777;
   height: 60px;
   z-index: 2000;
-  padding-top: 2px;
+  margin-left: 0;
 }
 
 .footer .container {
