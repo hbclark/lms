@@ -4,3 +4,4 @@
 <p>3.database:homestead<p>
 <p>4.URL:lms.test</p>
 <p>5.use app.scss</p>
+<p>6.use php artisan tinker to create user/admin</p>
