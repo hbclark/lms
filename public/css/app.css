@@ -8426,7 +8426,7 @@ main {
   color: #777;
   height: 60px;
   z-index: 2000;
-  margin-left: 0;
+  width: 100%;
 }
 
 .footer .container {
@@ -8450,5 +8450,38 @@ main {
   padding-left: 0;
   margin: 20px 0;
   border-radius: 4px;
+}
+
+/*  Student Detail*/
+
+#studentDetail {
+  padding-left: 15px;
+  padding-top: 10px;
+}
+
+#studentDetail .row {
+  margin: 20px 0;
+}
+
+#studentDetail .avatar {
+  padding-left: 20px;
+  padding-top: 10px;
+}
+
+#studentDetail .info {
+  font-size: 20px;
+  margin: 0px;
+  padding-top: 1px;
+  line-height: 20px;
+}
+
+#studentDetail .em {
+  font-weight: 400;
+}
+
+#studentDetail .btn {
+  margin: 20px;
+  padding: 0 10px;
+  border-radius: 50%;
 }
 

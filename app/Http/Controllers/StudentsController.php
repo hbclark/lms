@@ -17,7 +17,7 @@ class StudentsController extends Controller
     public function index()
 
     {
-        $students=Student::orderBy('created_at','asc')->paginate(5);
+        $students=Student::orderBy('created_at','acs')->paginate(5);
         return view('students.index',compact('students'));
     }
 

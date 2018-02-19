@@ -70,6 +70,9 @@ main{
   cursor:pointer;
 }
 
+
+
+
 /*  footer */
 .footer {
   padding:20px 0;
@@ -106,4 +109,35 @@ main{
   padding-left: 0;
   margin: 20px 0;
   border-radius: 4px;
+}
+
+
+/*  Student Detail*/
+#studentDetail{
+  padding-left:15px;
+  padding-top:10px;
+
+  .row{
+    margin:20px 0;
+  }
+
+  .avatar{
+     padding-left:20px;
+     padding-top:10px;
+   }
+  .info{
+    font-size:20px;
+    margin:0px;
+    padding-top:1px;
+    line-height: 20px;
+  }
+  .em{
+    font-weight:400;
+  }
+
+  .btn{
+    margin:20px;
+    padding:0 10px;
+    border-radius: 50%;
+  }
 }
