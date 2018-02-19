@@ -1,5 +1,6 @@
 <h1>Lecture Management System<h1>
 <code>git clone https://github.com/hbclark/lms.git</code>
+<code>cp .env.example .env</code>
 <p>1.composer install</p>
 <p>2.npm install</p>
 <p>3.database:homestead<p>
